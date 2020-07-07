@@ -8,25 +8,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Amusement Park</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+    integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
 </head>
 
 <body>
-  <header class="navbar-fixed">
-    <nav>
-      <div class="nav-wrapper">
-        <ul>
-          <li><a href="{% url 'home' %}" class="left brand-logo">&nbsp;&nbsp;Amusement Park</a></li>
-        </ul>
-        <ul class="right">
-          <li><a href="/login">Login</a></li>
-          <li><a href="{% url 'signup' %}">Signup</a></li>
-          <li><a href="{% url 'admin' %}">Admin</a></li>
-        </ul>
-      </div>
-      s
-    </nav>
-  </header>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="{% url 'home' %}">Amusement Park</a>
+    <ul class="navbar-nav d-flex justify-content-between">
+      <li><a href="/login">Login</a></li>
+      <li><a href="{% url 'signup' %}">Signup</a></li>
+      <li><a href="{% url 'admin' %}">Admin</a></li>
+    </ul>
+  </nav>
   <main class="container">
     {% block content %}
     <!-- where all the other files go -->
