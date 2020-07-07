@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-
+from .models import User
 
 # Home Page
 def home(request):
@@ -8,4 +8,14 @@ def home(request):
 
 
 def admin(request):
-    return render(request, 'admin.html')
+    user = User.objects.all()
+    context = {
+      'user': user
+    }
+    return render(request, 'admin.html', context)
+
+
+#  TODO
+#  need to validate (min length, ".", "@")
+#  make a min length validator
+
