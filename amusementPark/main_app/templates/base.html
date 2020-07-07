@@ -16,26 +16,26 @@
 
 <body>
   <header>
-    <div class="pos-f-t">
-      <nav class="navbar navbar-dark bg-dark d-flex justify-content-start">
-        <button class="navbar-toggler " type="button" data-toggle="collapse" data-target="#navbarSupportedContent1"
-          aria-controls="navbarSupportedContent1" aria-expanded="false" aria-label="Toggle navigation">
+    <div class="pos-f-t" style="padding: 1em;">
+      <nav class="navbar navbar-dark bg-primary d-flex justify-content-start">
+        <button class="navbar-toggler btn-sm" type="button" data-toggle="collapse" data-target="#navbarSupportedContent1"
+          aria-controls="navbarSupportedContent1" aria-expanded="false" aria-label="Toggle navigation" style="border-color: white; border-width: 0.2em; font-size: .6em">
           <span class="navbar-toggler-icon"></span>
         </button>
         <h1 class='text-light ml-2'>Amusement Park</h1>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent1">
+        <div class="collapse navbar-collapse" id="navbarSupportedContent1" style="background-color: #F2EB2E;">
           <ul class="navbar-nav mr-auto">
             <li class="nav-item">
-              <a class="nav-link" href="{% url 'home' %}">Amusement Park</a>
+              <a class="nav-link" href="{% url 'home' %}" style="padding-left: 0.5em;color: black;">Amusement Park</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="{% url 'newsletter' %}">Newsletter</a>
+              <a class="nav-link" href="{% url 'newsletter' %}" style="padding-left: 0.5em;color: black;">Newsletter</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="{% url 'signup' %}">Sign Up</a>
+              <a class="nav-link" href="{% url 'signup' %}" style="padding-left: 0.5em;color: black;">Sign Up</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="{% url 'admin' %}">Admin</a>
+              <a class="nav-link" href="{% url 'admin' %}" style="padding-left: 0.5em;color: black;">Admin</a>
             </li>
           </ul>
         </div>
