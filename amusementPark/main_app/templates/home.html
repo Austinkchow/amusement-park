@@ -4,7 +4,6 @@
 
 <div class="hero-image">
     <div class="hero-text">
-        <h1>Amusement Park</h1>
         <img src="/static/images/amusementPark3.jpg" class="d-block w-100">
     </div>
 </div>
@@ -52,18 +51,22 @@
             class="img-thumbnail w-25">
     </div>
 </div>
-<div class='d-flex flex-column'>
+<div class='d-flex flex-column mt-5'>
     <h3 class="text-center">Let's Stay Connected!</h3>
     <p class="text-center">Sign up for Amuse</p>
-    <input type="email" placeholder="Enter your Email">
-    <p class="text-center">We promise: we will never sell your information. Sign up for our newsletter to recieve
-        special
-        offers and updates. Select your communication preferrences on the next screen.</p>
-    <form action="{% url 'signup' %}" method="GET">
+    <form action="{% url 'signup' %}" method="POST">
         {% csrf_token %}
-        <button type="button" class="btn btn-primary btn-lg btn-block ">Continue</button>
+        <div class='d-flex flex-column'>
+            <input type="text" name="firstName" placeholder="Enter your first name">
+            <input type="text" name="lastName" placeholder="Enter your last name">
+            <input type="email" name="email" placeholder="Enter your Email">
+        </div>
+        <p class="text-center">We promise: we will never sell your information. Sign up for our newsletter to recieve
+            special offers and updates. Select your communication preferrences on the next screen.</p>
+        <button type="submit" class="btn btn-primary btn-lg btn-block ">Subscribe</button>
     </form>
-    <button type="button" class="btn btn-link btn-lg btn-block">Learn more</button>
+    <p class="text-center"><a href="{% url 'newsletter' %}">Learn more</a></p>
+
 </div>
 
 {% endblock %}
