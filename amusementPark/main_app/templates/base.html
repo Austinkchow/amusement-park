@@ -24,14 +24,21 @@
         </div>
       </div>
       <nav class="navbar navbar-dark bg-dark d-flex justify-content-start">
-        <button class="navbar-toggler " type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent"
-          aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler " id="menu" type="button">
           <span class="navbar-toggler-icon"></span>
         </button>
         <h5 class="text-white h4 px-md-5"><a href="{% url 'home' %}">Amusement Park</a></h5>
       </nav>
     </div>
   </header>
+
+  <!-- modal for menu -->
+  <div class="modal" id="menu-modal" tabindex="-1" role="dialog">
+    <a href="#" class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">Home</a>
+    <a href="#" class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">News Letter</a>
+    <a href="#" class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">Sign Up</a>
+    <a href="#" class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">Admin</a>
+  </div>
 
   <main class="container">
     {% block content %}
@@ -50,5 +57,16 @@
     integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
     crossorigin="anonymous"></script>
 </body>
+<script>
+  const modal = type => {
+    $(`#${type}`)
+      .modal({
+        blurring: true
+      })
+      .modal('show');
+  };
+  /* Event Listener */
+  $('#menu').on('click', () => modal('menu-modal'));
+</script>
 
 </html>
