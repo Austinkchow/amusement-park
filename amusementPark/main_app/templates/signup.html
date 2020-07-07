@@ -1,64 +1,83 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<p3>News Letter</p3>
+<h2 class="text-center mt-5">Newsletter</h2>
+<h5 class="mt-3">Sign UP</h5>
 <p>Sign up for our newsletter to recieve special park savings and early notifications about the events of your choice.
 </p>
 <h5>{{error_message}}</h5>
 <form action="{% url 'signup' %}" method="POST">
     {% csrf_token %}
-    {{ form }}
-    <p>Sign up for our newsletter to recieve special park savings and early notifications about the events of your
-        choice.</p>
-    <p5>Preferences</p5>
-    <p>Choose the newsletters that interest you most.</p>
-    <div class="form-check form-check-inline">
-        <label class="form-check-label" for="inlineCheckbox1">Category A</label>
-        <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
-        <span>Category A includes lorem ipsum</span>
+    <div class='d-flex flex-column'>
+        <input type="text" name="firstName" placeholder="Enter your first name">
+        <input type="text" name="lastName" placeholder="Enter your last name">
+        <input type="email" name="email" placeholder="Enter your Email">
     </div>
-    <div class="form-check form-check-inline">
-        <label class="form-check-label" for="inlineCheckbox2">Category B</label>
-        <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
-        <span>Category B includes lorem ipsum</span>
+    <h5 class="mt-3 text-center">Preferences</h5>
+    <p class="text-center">Choose the newsletters that interest you most.</p>
+    <div class='d-flex justify-content-center'>
+        <ul>
+            <li>
+                <div class="form-check form-check-inline">
+                    <label class="form-check-label" for="inlineCheckbox1">Category A</label>
+                    <input class="form-check-input m-2" type="checkbox" id="inlineCheckbox1" value="option1">
+                    <span>Category A includes lorem ipsum</span></div>
+            </li>
+            <li>
+                <div class="form-check form-check-inline">
+                    <label class="form-check-label" for="inlineCheckbox2">Category B</label>
+                    <input class="form-check-input m-2" type="checkbox" id="inlineCheckbox2" value="option2">
+                    <span>Category B includes lorem ipsum</span>
+                </div>
+            </li>
+            <li>
+                <div class="form-check form-check-inline">
+                    <label class="form-check-label" for="inlineCheckbox3">Category C</label>
+                    <input class="form-check-input m-2" type="checkbox" id="inlineCheckbox3" value="option3">
+                    <span>Category C includes lorem ipsum</span>
+                </div>
+            </li>
+            <li>
+                <div class="form-check form-check-inline">
+                    <label class="form-check-label" for="inlineCheckbox3">Category D</label>
+                    <input class="form-check-input m-2" type="checkbox" id="inlineCheckbox3" value="option3">
+                    <span>Category D includes lorem ipsum</span>
+                </div>
+            </li>
+        </ul>
+    </div>
 
+    <h5 class="text-center">How Often Should we Reach Out?</h5>
+    <p class="text-center">Tell us how often you’d like to recieve updates in your email inbox.</p>
+    <div class='d-flex justify-content-center'>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1"
+                checked>
+            <label class="form-check-label" for="exampleRadios1">
+                Weekly
+            </label>
+        </div>
+        <div class="form-check">
+            <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
+            <label class="form-check-label" for="exampleRadios2">
+                Bi-Weekly
+            </label>
+        </div>
+        <div class="form-check ">
+            <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios3" value="option3">
+            <label class="form-check-label" for="exampleRadios3">
+                Monthly
+            </label>
+        </div>
+        <div class="form-check ">
+            <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios3" value="option3">
+            <label class="form-check-label" for="exampleRadios3">
+                Quarterly
+            </label>
+        </div>
     </div>
-    <div class="form-check form-check-inline">
-        <label class="form-check-label" for="inlineCheckbox3">Category C</label>
-        <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3">
-        <span>Category C includes lorem ipsum</span>
+    <div class='d-flex justify-content-center'>
+        <input type="submit" value="Submit">
     </div>
-    <div class="form-check form-check-inline">
-        <label class="form-check-label" for="inlineCheckbox3">Category D</label>
-        <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3">
-        <span>Category D includes lorem ipsum</span>
-    </div>
-    <p5>How Often Should we Reach Out?</p5>
-    <p>Tell us how often you’d like to recieve updates in your email inbox.</p>
-    <div class="form-check">
-        <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
-        <label class="form-check-label" for="exampleRadios1">
-            Weekly
-        </label>
-    </div>
-    <div class="form-check">
-        <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2">
-        <label class="form-check-label" for="exampleRadios2">
-            Bi-Weekly
-        </label>
-    </div>
-    <div class="form-check ">
-        <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios3" value="option3">
-        <label class="form-check-label" for="exampleRadios3">
-            Monthly
-        </label>
-    </div>
-    <div class="form-check ">
-        <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios3" value="option3">
-        <label class="form-check-label" for="exampleRadios3">
-            Quarterly
-        </label>
-    </div>
-    <input type="submit" value="Submit">
 </form>
 {% endblock %}
