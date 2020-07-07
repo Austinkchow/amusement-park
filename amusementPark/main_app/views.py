@@ -8,12 +8,17 @@ from .forms import Sign_Up_Form
 def home(request):
   return render(request, 'home.html')
 
+
+# Newsletter Page
+def newsletter(request):
+  return render(request, 'newsletter.html')
+
+
 # Admin Page
 # TODO 
 # Should list user firstName, lastName, email, and preferences
 # solved bug for user info not displaying on admin.html page by changing 'user' to 'users' 
 def admin(request):
-
     users = User.objects.all()
     context = {
       'users': users

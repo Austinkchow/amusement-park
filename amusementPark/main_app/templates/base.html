@@ -10,35 +10,38 @@
 
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
     integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+  <link rel="stylesheet" href="style.css">
+
 </head>
 
 <body>
   <header>
     <div class="pos-f-t">
-      <div class="collapse" id="navbarToggleExternalContent">
-        <div class="bg-dark p-1">
-          <span class="text-muted"><a href="{% url 'signup' %}">Sign Up</a></span>
-        </div>
-        <div class="bg-dark p-1">
-          <span class="text-muted"><a href="{% url 'admin' %}">Admin</a></span>
-        </div>
-      </div>
       <nav class="navbar navbar-dark bg-dark d-flex justify-content-start">
-        <button class="navbar-toggler " id="menu" type="button">
+        <button class="navbar-toggler " type="button" data-toggle="collapse" data-target="#navbarSupportedContent1"
+          aria-controls="navbarSupportedContent1" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
-        <h5 class="text-white h4 px-md-5"><a href="{% url 'home' %}">Amusement Park</a></h5>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent1">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'home' %}">Amusement Park</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'newsletter' %}">Newsletter</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'signup' %}">Sign Up</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'admin' %}">Admin</a>
+            </li>
+          </ul>
+        </div>
       </nav>
     </div>
   </header>
-
-  <!-- modal for menu -->
-  <div class="modal" id="menu-modal" tabindex="-1" role="dialog">
-    <a href="#" class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">Home</a>
-    <a href="#" class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">News Letter</a>
-    <a href="#" class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">Sign Up</a>
-    <a href="#" class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">Admin</a>
-  </div>
 
   <main class="container">
     {% block content %}
@@ -57,16 +60,5 @@
     integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
     crossorigin="anonymous"></script>
 </body>
-<script>
-  const modal = type => {
-    $(`#${type}`)
-      .modal({
-        blurring: true
-      })
-      .modal('show');
-  };
-  /* Event Listener */
-  $('#menu').on('click', () => modal('menu-modal'));
-</script>
 
 </html>
