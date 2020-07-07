@@ -6,16 +6,20 @@ from .models import User
 def home(request):
   return render(request, 'home.html')
 
-
+# Admin Page
+# TODO 
+# Should list user firstName, lastName, email, and preferences
+# solved bug for user info not displaying on admin.html page by changing 'user' to 'users' 
 def admin(request):
-    user = User.objects.all()
+    users = User.objects.all()   
     context = {
-      'user': user
+      'users': users,
     }
+    print(users)
     return render(request, 'admin.html', context)
 
 
 #  TODO
 #  need to validate (min length, ".", "@")
-#  make a min length validator
+
 
