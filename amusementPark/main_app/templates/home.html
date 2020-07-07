@@ -52,11 +52,18 @@
             class="img-thumbnail w-25">
     </div>
 </div>
-<h3 class="text-center">Let's Stay Connected!</h3>
-<h6 class="text-center">Sign up for Amuse</h6>
-<input type="email" placeholder="Enter your Email">
-<p class="text-center">We promise: we will never sell your information. Sign up for our newsletter to recieve special
-    offers and updates. Select your communication preferrences on the next screen.</p>
-<button type="button" class="btn btn-primary btn-lg btn-block">Continue</button>
-<button type="button" class="btn btn-link btn-lg btn-block">Learn more</button>
+<div class='d-flex flex-column'>
+    <h3 class="text-center">Let's Stay Connected!</h3>
+    <p class="text-center">Sign up for Amuse</p>
+    <input type="email" placeholder="Enter your Email">
+    <p class="text-center">We promise: we will never sell your information. Sign up for our newsletter to recieve
+        special
+        offers and updates. Select your communication preferrences on the next screen.</p>
+    <form action="{% url 'signup' %}" method="GET">
+        {% csrf_token %}
+        <button type="button" class="btn btn-primary btn-lg btn-block ">Continue</button>
+    </form>
+    <button type="button" class="btn btn-link btn-lg btn-block">Learn more</button>
+</div>
+
 {% endblock %}
