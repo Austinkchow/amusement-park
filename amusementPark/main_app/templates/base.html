@@ -15,20 +15,31 @@
 <body>
   <header>
     <div class="pos-f-t">
-      <div class="collapse" id="navbarToggleExternalContent">
-        <div class="bg-dark p-1">
-          <span class="text-muted"><a href="{% url 'signup' %}">Sign Up</a></span>
-        </div>
-        <div class="bg-dark p-1">
-          <span class="text-muted"><a href="{% url 'admin' %}">Admin</a></span>
-        </div>
-      </div>
       <nav class="navbar navbar-dark bg-dark d-flex justify-content-start">
-        <button class="navbar-toggler " type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent"
-          aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler " type="button" data-toggle="collapse" data-target="#navbarSupportedContent1"
+          aria-controls="navbarSupportedContent1" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
-        <h5 class="text-white h4 px-md-5"><a href="{% url 'home' %}">Amusement Park</a></h5>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent1">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'home' %}">Amusement Park</a></span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'signup' %}">Sign Up</a></span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'admin' %}">Admin</a></span></a>
+            </li>
+          </ul>
+        </div>
+
+        
+        <div>
+          <h5 class="px-md-5"><a href="{% url 'home' %}">Amusement Park</a></h5>
+        </div>
+        
       </nav>
     </div>
   </header>
